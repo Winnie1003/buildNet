@@ -16,7 +16,8 @@ nodeData = parseData(defaultParams.data);
  
 %% Construct Network
 relationMap = constructStuRelationMap(nodeData, defaultParams.data.sheetName);
-plotStuMap(relationMap, defaultParams.plot.figSize, defaultParams.other.savePath);
+% plotStuMap(relationMap, defaultParams.plot.figSize, defaultParams.other.savePath);
 
 %% Problem I     Calculate Degree and Display Degree Distribution
-
+relationMap = calculateDegree(relationMap);
+plotDegreeDistribution(relationMap, defaultParams.plot.figSize);
