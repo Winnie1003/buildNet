@@ -20,4 +20,7 @@ relationMap = constructStuRelationMap(nodeData, defaultParams.data.sheetName);
 
 %% Problem I     Calculate Degree and Display Degree Distribution
 relationMap = calculateDegree(relationMap);
-plotDegreeDistribution(relationMap, defaultParams.plot.figSize);
+% plotDegreeDistribution(relationMap, defaultParams.plot.figSize);
+
+%% Problem II    Calculate Distance and Average Path Length
+relationMap = calculateDistance(relationMap);

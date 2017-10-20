@@ -22,7 +22,7 @@ function netPlot(relationMatrix, netName)
     A = relationMatrix;
     [m, n] = size(A);
     W = zeros(m, m);
-    for i = 1 : n
+    for i = 1:n
         a = find(A(:,i) ~= 0);
         W(a(1), a(2)) = 1;
         W(a(2), a(1)) = 1;
@@ -33,8 +33,8 @@ function netPlot(relationMatrix, netName)
     h = floor(n / w);        
     x = [];
     y = [];
-    for i = 1 : h           % generate random point
-        for j = 1 : w
+    for i = 1:h           % generate random point
+        for j = 1:w
             x = [x, 10 * rand(1) + (j-1) * 10];
             y = [y, 10 * rand(1) + (i-1) * 10];
         end
