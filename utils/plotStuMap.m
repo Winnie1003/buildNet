@@ -4,7 +4,7 @@
 % 
 % This function is used to draw the network
 
-function plotStuMap(stuMap, figSz)
+function plotStuMap(stuMap, figSz, savePath)
     initFig(figSz);
     fprintf('Start to plot network, please wait...\n');
     for relationIdx = 1:numel(stuMap.relationName)
@@ -39,19 +39,14 @@ function netPlot(relationMatrix, netName)
             y = [y, 10 * rand(1) + (i-1) * 10];
         end
     end
-    ed = n - h * w;
-    for i = 1 : ed
-       x = [x, 10 * rand(1) + (i-1) * 10]; 
-       y = [y, 10 * rand(1) + h * 10];
-    end
     plot(x, y, 'r*');    
 
     for i = 1:n
         for j = i:n
             if A(i,j) ~= 0
-                weightStr = num2str(A(i,j));                                                % transfer weight (here default weight is 1) to string           
-                text((x(i)+x(j)) / 2, (y(i) + y(j)) / 2,weightStr, 'Fontsize', 10);         % draw the weight
-                line([x(i), x(j)],[y(i), y(j)]);                                            % draw the connection line
+                weightStr = num2str(A(i, j));                                                % transfer weight (here default weight is 1) to string           
+                text((x(i)+x(j)) / 2, (y(i) + y(j)) / 2, weightStr, 'Fontsize', 10);         % draw the weight
+                line([x(i), x(j)], [y(i), y(j)]);                                            % draw the connection line
             end
             text(x(i), y(i), num2str(i), 'Fontsize', 14, 'color', 'r');                     % draw the id of each node           
             hold on;

@@ -11,6 +11,9 @@ function params = initEnvironment()
     params.data.sheetName = {'name', 'hometown', 'dialect'};
 
 %% Plot params
-    params.plot.figSize = [250, 300, 1500, 400];  % [x, y, w, h] from the bottom left corner of the screen, should be adjusted to fit different devices
+    params.plot.figSize = [250, 300, 1600, 500];  % [x, y, w, h] from the bottom left corner of the screen, should be adjusted to fit different devices
+
+%% Other params
+    params.other.savePath = './results/';
 end
 
